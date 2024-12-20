@@ -43,7 +43,7 @@ const LotterySystem = () => {
       const matchups = generateMatchups(shuffleTeams(TEAMS));
       setCurrentRound(matchups);
       setIsSpinning(false);
-    }, 5000); // Çark dönme süresi
+    }, 8000); // Çark dönme süresi
   };
 
   const handleWinnerSelection = (winner: string, index: number) => {
@@ -70,7 +70,7 @@ const LotterySystem = () => {
       setHiddenTeams(new Map()); // Yeni turda butonlar yeniden görünür
       setRoundStage(roundStage + 1); // Increment round stage
       setIsSpinning(false); // Çark durdu
-    }, 5000); // Çark dönme süresi
+    }, 15000); // Çark dönme süresi
   };
 
   const handleFinalWinnerSelection = (winner: string) => {
@@ -102,7 +102,7 @@ const LotterySystem = () => {
           <div className="h-screen mx-auto max-w-[800px] w-full  bg-[url('/logo.svg')] bg-center bg-no-repeat bg-cover opacity-10" />
 
           <div className=" absolute inset-0 mx-auto flex h-screen w-full  flex-col items-center justify-center bg-transparent">
-            <h1 className="text-yellow-500 font-bold text-8xl nano animate-bounce">
+            <h1 className="text-black absolute bottom-16 font-bold text-8xl dado animate-bounce">
               {finalWinner} - Kazandı!
             </h1>
           </div>
@@ -134,9 +134,9 @@ const LotterySystem = () => {
           )}
 
           {isSpinning && (
-            <div className="flex justify-center items-center mt-10 p-1 border border-white w-[350px] h-[350px] rounded-full dado">
-              <div className="flex justify-center items-center animate-spin rounded-full h-[300px] w-[300px] border-t-2 border-b-2 border-yellow-500">
-                <div className="flex justify-center items-center animate-spin rounded-full h-[250px] w-[250px] border-l-2 border-r-2 border-lime-500">
+            <div className="flex justify-center items-center mt-10 p-1 border-t-4 animate-spin border-white w-[350px] h-[350px] rounded-full">
+              <div className="flex justify-center items-center animate-spin rounded-full h-[300px] w-[300px]  border-b-4 border-yellow-500">
+                <div className="flex justify-center items-center animate-spin rounded-full h-[250px] w-[250px] border-l-4 border-lime-500">
                   <div className="flex justify-center items-center animate-spin rounded-full h-[200px] w-[200px] border-t-2 border-b-2 border-pink-500 border-2"></div>
                   <div className="flex justify-center items-center animate-spin rounded-full h-[150px] w-[150px] border-tl-2 border-r-2 border-yellow-500 border-2"></div>
                   <div className="flex justify-center items-center animate-spin rounded-full h-[100px] w-[100px] border-t-2 border-b-2 border-green-500 border-2"></div>
